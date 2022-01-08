@@ -1,0 +1,59 @@
+body{
+    text-align: justify;
+}
+
+
+#navbar {
+  height: 60px;
+
+  /* border-radius: 10px; */
+  background-color: teal;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+#box {
+  display: flex;
+  gap: 100px;
+  margin-right: 25px;
+}
+#home {
+  margin-left: 25px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+#searchDiv {
+  text-align: end;
+}
+
+#randomData {
+  text-align: center;
+  margin-top: 100px;
+}
+
+#latestData {
+  display: grid;
+  grid-template-columns: repeat(3, 31%);
+  grid-gap: 40px;
+  text-align: center;
+  margin-top: 25px;
+}
+#latestData > div > img {
+  width: 350px;
+  border-radius: 5px;
+}
+
+#searchData {
+  display: grid;
+  grid-template-columns: repeat(3, 31%);
+  grid-gap: 40px;
+  text-align: center;
+  margin-top: 25px;
+}
+#searchData > div > img {
+    width: 350px;
+    border-radius: 5px;
+  }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div id="container"></div>
+    <br />
+
+    <div id="searchDiv">
+      <input type="text" id="search" placeholder="search here" />
+      <button>Search</button>
+    </div>
+    <div id="searchData"></div>
+  </body>
+</html>
+
+<script type="module">
+  import navbar from "./scripts/navbar.js";
+  import { getData, appendData } from "./scripts/getData.js";
+
+  let container = document.getElementById("container");
+
+  container.innerHTML = navbar();
+
+  let data_append = document.getElementById("searchData");
+
+  document.querySelector("button").addEventListener("click", searchData);
+
+  function searchData() {
+    let search = document.getElementById("search").value;
+
+    data_append.innerHTML = "";
+
+    let data = getData(
+      `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
+    );
+
+    data
+      .then((res) => {
+          console.log(res)
+        appendData(res, data_append);
+      })
+
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+</script>
